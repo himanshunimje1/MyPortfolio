@@ -2,42 +2,47 @@
   @description       : 
   @author            : Himanshu Nimje
   @group             : 
-  @last modified on  : 11-29-2023
-  @last modified by  : Himanshu Nimje
+  @last modified on  : 01-26-2024
+  @last modified by  : HimanshuNimje@live.com
 -->
 <template>
   <div class="banner"> 
       <img src={userPic} class="profile-pic"/>
-      <div class="name">Himanshu Nimje</div>
-      <div class="designation">Salesforce Architect at Gall&Gall</div>
-      <div class="location">Amsterdam, Netherlands</div>
+      <div class="name">{fullName}</div>
+      <div class="designation">{designation} at {companyName}</div>
+      <div class="location">{companyLocation}</div>
 
-      <!-- <div> 
+      <div> 
+        <template lwc:if={linkedinUrl}>
           <a href={linkedinUrl} target="_blank">
               <img src={linkedin} class="social-icon"/>
           </a>
-
+          </template>
+          <template lwc:if={twitterUrl}>
           <a href={twitterUrl} target="_blank">
               <img src={twitter} class="social-icon"/>
           </a>
-
+          </template>
+          <template lwc:if={githubUrl}>`
           <a href={githubUrl} target="_blank">
               <img src={github} class="social-icon"/>
           </a>
-
+        </template>
+        <template lwc:if={youtubeUrl}>
           <a href={youtubeUrl} target="_blank">
               <img src={youtube} class="social-icon"/>
           </a>
-
+        </template>
+        <template lwc:if={trailheadUrl}>
           <a href={trailheadUrl} target="_blank">
               <img src={trailhead} class="social-icon"/>
           </a>
-
+        </template>
+        <template lwc:if={blogUrl}>
           <a href={blogUrl} target="_blank">
               <img src={blog} class="social-icon"/>
           </a>
-         
+         </template>
       </div>
-    -->
   </div>
 </template>
