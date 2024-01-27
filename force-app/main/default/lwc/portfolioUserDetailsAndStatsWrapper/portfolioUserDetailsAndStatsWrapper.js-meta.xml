@@ -22,7 +22,6 @@
         </property>
          <property name="trails" label="Trails" type="String">
         </property>
-     
      </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
