@@ -3,9 +3,9 @@ import { LightningElement, api } from 'lwc';
 export default class PortfolioUserDetails extends LightningElement {
     @api recordId
     @api objectApiName
-
+    @api resumeUrl
     downloadResume(){
-        window.open("https://github.com/himanshunimje1/Himanshu-Resume/blob/main/Himanshu_Nimje_Resume%20.pdf","_blank");
+        window.open(this.resumeUrl,"_blank")
     }
-    
+    //"https://github.com/karkranikhil/nikhil-resume/raw/main/SFdummyResume%20(1).pdf"
 }
