@@ -1,27 +1,22 @@
 .banner{
-    background-color: navy;        
-    text-align: center;
+    background: #f6c403;
     min-height: 300px;
+    text-align: center;
     padding: 32px 16px;
 }
-
 .profile-pic{
     border-radius: 50%;
     height: 160px;
     width: 160px;
 }
-
 .name{
     font-size: 32px;
     font-weight: 700;
-    color: white;
 }
-
 .designation, .location{
     font-size: 24px;
-    color: white;
+    color: #243763;
 }
-
 .social-icon{
     height: 40px;
     width: 40px;
