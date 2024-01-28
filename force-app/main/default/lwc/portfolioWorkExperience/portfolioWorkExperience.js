@@ -12,12 +12,13 @@ export default class PortfolioWorkExperience extends LightningElement {
         'WorkExperience__c.CompanyName__c',
         'WorkExperience__c.WorkLocation__c',
         'WorkExperience__c.Description__c',
-        'WorkExperience__c.IsCurrent__c'
+        'WorkExperience__c.IsCurrent__c',
+        'WorkExperience__c.CompanyYOE__c'
+
     ]
     })WorkExperienceHandler({data, error}){
         if(data){
             console.log("WorkExperience Data", JSON.stringify(data))
-
             this.formatExperience(data)
         }
         if(error){
@@ -29,7 +30,7 @@ export default class PortfolioWorkExperience extends LightningElement {
         this.workExperienceList = [...data.records].map(item=>{
             let id = item.id
             const {JobStartDate__c,JobEndDate__c, Role__c, 
-                CompanyName__c, WorkLocation__c, Description__c, IsCurrent__c } = item.fields
+                CompanyName__c, WorkLocation__c, Description__c, IsCurrent__c, CompanyYOE__c } = item.fields
             let JobStartDate = this.getValue(JobStartDate__c)
             let JobEndDate = this.getValue(JobEndDate__c)
             let CompanyName = this.getValue(CompanyName__c)
@@ -37,8 +38,9 @@ export default class PortfolioWorkExperience extends LightningElement {
             let Description = this.getValue(Description__c)
             let IsCurrent = this.getValue(IsCurrent__c)
             let Role = this.getValue(Role__c)
+            let currentYOE = this.getValue(CompanyYOE__c)
 
-            return {id,JobStartDate,JobEndDate,CompanyName,WorkLocation, Description, IsCurrent, Role}
+            return {id,JobStartDate,JobEndDate,CompanyName,WorkLocation, Description, IsCurrent, Role, currentYOE}
         })
 
         console.log("workExperienceList", JSON.stringify(this.workExperienceList))
