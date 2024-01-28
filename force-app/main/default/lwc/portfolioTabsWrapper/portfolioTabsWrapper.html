@@ -2,7 +2,7 @@
   @description       : 
   @author            : HimanshuNimje@live.com
   @group             : 
-  @last modified on  : 01-27-2024
+  @last modified on  : 01-28-2024
   @last modified by  : HimanshuNimje@live.com
 -->
 <template>
@@ -18,7 +18,10 @@
                 <c-portfolio-personal-projects></c-portfolio-personal-projects>
             </lightning-tab>
             <lightning-tab label="Work Experience">
-                Work Experience Content !
+                <template if:true={recordId}>
+                    <c-portfolio-work-experience record-id={recordId}></c-portfolio-work-experience>
+                </template>
+              
             </lightning-tab>
             <lightning-tab label="Skills">
                 Skills Content !
