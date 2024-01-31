@@ -8,33 +8,43 @@
 <template>
     <div>
         <lightning-tabset variant="scoped">
+
             <lightning-tab label="Summary">
                 <template if:true={recordId}>
                     <c-portfolio-summary record-id={recordId}
                     object-api-name={objectApiName}></c-portfolio-summary>
                 </template>
             </lightning-tab>
+
             <lightning-tab label="Personal Projects">
                 <c-portfolio-personal-projects></c-portfolio-personal-projects>
             </lightning-tab>
+
             <lightning-tab label="Work Experience">
                 <template if:true={recordId}>
                     <c-portfolio-work-experience record-id={recordId}></c-portfolio-work-experience>
                 </template>
               
             </lightning-tab>
+
             <lightning-tab label="Skills">
-                Skills Content !
+                <template if:true={recordId}>
+                <c-portfolio-skills record-id={recordId}></c-portfolio-skills>
+                </template>
             </lightning-tab>
+
             <lightning-tab label="Education">
                 Education Content !
             </lightning-tab>
+
             <lightning-tab label="Certifications">
                 Certifications Content !
             </lightning-tab>
+
             <lightning-tab label="Others">
                 Others Content !
             </lightning-tab>
+            
         </lightning-tabset>
     </div>
 </template>
