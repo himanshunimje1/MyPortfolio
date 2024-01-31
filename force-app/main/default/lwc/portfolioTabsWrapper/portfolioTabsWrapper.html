@@ -2,7 +2,7 @@
   @description       : 
   @author            : HimanshuNimje@live.com
   @group             : 
-  @last modified on  : 01-28-2024
+  @last modified on  : 01-31-2024
   @last modified by  : HimanshuNimje@live.com
 -->
 <template>
@@ -34,7 +34,9 @@
             </lightning-tab>
 
             <lightning-tab label="Education">
-                Education Content !
+                <template if:true={recordId}>
+                    <c-portfolio-education record-id={recordId}></c-portfolio-education>
+                </template>
             </lightning-tab>
 
             <lightning-tab label="Certifications">
